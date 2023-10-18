@@ -1,4 +1,4 @@
-#Calculates final score based on weekly score updates, and returns the week where the score was highest.
+#Calculates final score based on weekly score updates, returns the highest score reached and the week where this occured.
 
 def score_calc():
     current_score = 1500
