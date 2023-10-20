@@ -8,17 +8,14 @@ class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         
 
-        results = []
+        anagram_dict = {}
 
-        for i in strs:
-            sorted_word = "".join(sorted(i))
-            
-            for j in results:
-                if sorted_word == "".join(sorted(j[0])):
-                    j.append(i)
-                    break
-                
+        for word in strs:
+            sorted_word = "".join(sorted(word))
+        
+            if sorted_word in anagram_dict:
+                anagram_dict[sorted_word].append(word)
             else:
-                results.append([i])
-                
-        return results
+                anagram_dict[sorted_word] = [word]
+
+        return list(anagram_dict.values())
